@@ -1,0 +1,29 @@
+desc "Build the gem"
+task :build do
+  # Copy required files into the gem
+  puts "Assembling gem files..."
+  gem_dir = File.dirname(__FILE__)
+  bugsnag_cli_dir = File.join(gem_dir, 'bugsnag-cli')
+  bin_dir = File.join(gem_dir, 'bin')
+
+  FileUtils.cd(bugsnag_cli_dir) do
+    puts "Building Bugsnag CLI binaries..."
+    system("make build-all")
+    raise "Failed to build Bugsnag CLI" unless $?.success?
+    puts "Copying Bugsnag CLI binary..."
+    FileUtils.mkdir_p(bin_dir)
+    Dir.glob(File.join(bugsnag_cli_dir, 'bin', '*')).each do |file|
+      next if File.directory?(file) # Skip directories
+      dest_file = File.join(bin_dir, File.basename(file))
+      puts "Copying #{file} to #{dest_file}"
+      FileUtils.cp(file, dest_file)
+    end
+  end
+  system("gem build fastlane-plugin-bugsnag.gemspec")
+end
+
+desc "Release the latest version to RubyGems"
+task :release => :build do
+  require_relative 'lib/fastlane/plugin/bugsnag/version'
+  system("gem push fastlane-plugin-bugsnag-#{Fastlane::Bugsnag::VERSION}.gem")
+end

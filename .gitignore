@@ -1,0 +1,12 @@
+Gemfile.lock
+maze_output
+vendor
+*.gem
+features/fixtures/fl-project/.bundle/
+features/fixtures/fl-project/Gemfile.lock
+features/fixtures/fl-project/fastlane/README.md
+features/fixtures/fl-project/fastlane/report.xml
+.DS_Store
+bin/*
+.bundle
+.idea
