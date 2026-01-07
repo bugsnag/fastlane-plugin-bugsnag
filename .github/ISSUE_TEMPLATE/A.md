@@ -7,7 +7,7 @@ labels: ''
 assignees: ''
 
 ---
-Please check out our [documentation](https://docs.bugsnag.com/platforms/ios/symbolication-guide/) for guides, references and tutorials.
+Please check out our [documentation](https://docs.bugsnag.com/build-integrations/fastlane/) for guides, references and tutorials.
 
 If you have questions about your integration, please contact us at [support@bugsnag.com](mailto:support@bugsnag.com).
 
