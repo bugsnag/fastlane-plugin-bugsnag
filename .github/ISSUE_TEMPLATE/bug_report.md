@@ -19,13 +19,10 @@ A clear and concise description of what the bug is.
 4. See error
 
 ### Environment
-* basic: curl version:
-* homebrew: ruby version:
-* fastlane:
-    * fastlane version:
-    * Related environment variables (if applicable):
-    * Info.plist or AndroidManifest.xml (if applicable):
-    * Copy of Fastfile:
+* Fastlane version:
+* Info.plist or AndroidManifest.xml (if applicable):
+* Copy of Fastfile:
+* Fastlane plugin version:
 
 <!--
   Below are a few approaches you might take to communicate the issue, in

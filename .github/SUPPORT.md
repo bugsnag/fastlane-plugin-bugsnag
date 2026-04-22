@@ -1,5 +1,5 @@
 ## Are you having trouble getting started?
-If you haven't already, please check out our [documentation](https://docs.bugsnag.com/platforms/ios/symbolication-guide/) for guides, references and tutorials.
+If you haven't already, please check out our [documentation](https://docs.bugsnag.com/build-integrations/fastlane/) for guides, references and tutorials.
 
 Or, if you wish, you can [contact us directly](mailto:support@bugsnag.com) for assistance on integrating BugSnag into your application, troubleshooting an issue, or if you have a question about our supported features.
 
@@ -9,13 +9,10 @@ When contacting support, please include as much information as necessary, includ
 - steps to reproduce
 - expected/actual behaviour 
 
-* basic: curl version:
-* homebrew: ruby version:
-* fastlane:
-    * fastlane version:
-    * Related environment variables (if applicable):
-    * Info.plist or AndroidManifest.xml (if applicable):
-    * Copy of Fastfile:
+* Fastlane version:
+* Info.plist or AndroidManifest.xml (if applicable):
+* Copy of Fastfile:
+* Fastlane plugin version:
 
 ## Bug or Feature Requests
 If you would like to raise a bug or feature request, please do so by creating a [New Issue](https://github.com/bugsnag/fastlane-plugin-bugsnag/issues/new/choose) and selecting bug or feature.
