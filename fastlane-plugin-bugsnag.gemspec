@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.test_files    = Dir["spec/**/*"]
 
-  spec.add_runtime_dependency 'xml-simple'
   spec.add_runtime_dependency 'git'
   spec.add_runtime_dependency "abbrev"
 

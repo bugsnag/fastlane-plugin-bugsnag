@@ -1,4 +1,4 @@
-require "xmlsimple"
+require "rexml/document"
 require "json"
 require_relative "find_info_plist_path"
 require_relative "bugsnag_cli"
@@ -287,11 +287,18 @@ module Fastlane
       def self.options_from_android_manifest file_path
         options = {}
         begin
-          meta_data = parse_android_manifest_options(XmlSimple.xml_in(file_path))
+          xml_content = File.read(file_path)
+          doc = REXML::Document.new(xml_content)
+          meta_data = {}
+          REXML::XPath.each(doc, "//meta-data") do |element|
+            name = element.attributes["android:name"]
+            value = element.attributes["android:value"]
+            meta_data[name] = value if name
+          end
           options[:apiKey] = meta_data["com.bugsnag.android.API_KEY"]
           options[:appVersion] = meta_data["com.bugsnag.android.APP_VERSION"]
           options[:releaseStage] = meta_data["com.bugsnag.android.RELEASE_STAGE"]
-        rescue ArgumentError
+        rescue ArgumentError, REXML::ParseException, Errno::ENOENT, Errno::EACCES => e
           nil
         end
         options
@@ -311,6 +318,10 @@ module Fastlane
         end
         options
       end
+
+      # NOTE: The following methods are no longer used.
+      # XML parsing is now handled directly via REXML::XPath in options_from_android_manifest.
+      # Kept for reference only.
 
       def self.parse_android_manifest_options config_hash
         map_meta_data(get_meta_data(config_hash))
