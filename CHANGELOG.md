@@ -1,3 +1,9 @@
+## 3.1.0 (26-06-2026)
+
+### Bug fixes
+
+* Replace `xml-simple` dependency with Ruby's built-in `rexml` to resolve a security vulnerability [#2](https://github.com/bugsnag/fastlane-plugin-bugsnag/pull/2)
+
 ## 3.0.0 (22-09-2025)
 
 ### Enhancements
