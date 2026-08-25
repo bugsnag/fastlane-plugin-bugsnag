@@ -1,3 +1,9 @@
+## 3.1.2 (25-08-2026)
+
+### Enhancements
+
+* Bump bugsnag-cli to v3.10.5 by updating the submodule reference to include latest CLI fixes and improvements. [#6](https://github.com/bugsnag/fastlane-plugin-bugsnag/pull/6)
+
 ## 3.1.1 (15-07-2026)
 
 ### Enhancements
